@@ -12,16 +12,17 @@ header {
     justify-content: space-between;
 }
 
-#Small_variants {
+.Small_variants {
+    font-family: Oxygen, sans-serif;
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
-    letter-spacing: 1px;
+    letter-spacing: 0.6px;
     text-align: left;
     text-transform: uppercase;
 }
 
-#Logo {
+.Logo {
     font-family: 'Lora', serif;
     font-size: 26px;
     font-weight: 400;
@@ -30,7 +31,9 @@ header {
 }
 
 img {
+    padding: 0;
     width: 100%;
+    margin-top: 38px;
 }
 
 #Main_Header {
@@ -49,4 +52,33 @@ img {
     font-weight: 400;
     line-height: 20px;
     text-align: center;
+}
+
+.Main_text {
+    font-family: Oxygen, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 35px;
+    text-align: left;
+    padding: 140px 240px 135px;
+}
+
+#bottom_header {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+footer {
+    display: flex;
+    padding: 28px 240px 27px;
+    justify-content: space-between;
+    background-image: url("image.png");
+}
+
+#bottom_text {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
