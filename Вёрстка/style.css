@@ -61,7 +61,7 @@ header {
     margin: 89px 250px;
 }
 
-.Main_text {
+#Main_text {
     font-family: Oxygen, sans-serif;
     font-size: 24px;
     font-weight: 400;
