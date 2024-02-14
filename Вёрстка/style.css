@@ -23,6 +23,10 @@ header {
     margin-left: 40px;
 }
 
+.Small_variants {
+    margin-top: -10px;
+}
+
 .Logo {
     font-family: 'Lora', serif;
     font-size: 26px;
@@ -91,6 +95,10 @@ footer {
     display: flex;
     padding-top: 27px;
     justify-content: space-between;
+}
+
+#bottom_header {
+    color: rgba(255, 255, 255);
 }
 
 #bottom_text {
