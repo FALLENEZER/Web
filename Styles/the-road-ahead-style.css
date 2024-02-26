@@ -83,7 +83,7 @@ h2 {
 footer {
     font-family: 'Lora', serif;
     height: 89px;
-    background-image: url("/Photos/Bottom_image.png");
+    background-image: url("../Photos/Bottom_image.png");
 }
 
 .footer_color {
