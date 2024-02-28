@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница блога</title>
     <link rel="stylesheet" href="Styles/index-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 
-    <body>
-    <header>
-    <a class="logo">Escape.</a>
-    <nav>
-        <ul class="list">
+<body>
+<header>
+    <img src="Photos/Escape.svg" alt="Escape">
+    <nav class="header__nav">
+        <ul class="logo__list">
             <li>HOME</li>
             <li>CATEGORIES</li>
             <li>ABOUT</li>
@@ -22,15 +28,47 @@
 </header>
 
 <main>
-
+    <div class="main__head">
+        <h1 class="main__head__title">Let's do it together.</h1>
+        <h2 class="main__head__subtitle">We travel the world in search of stories. Come along for the ride.</h2>
+        <div class="main__button">
+            <p>View Latest Posts</p>
+        </div>
+    </div>
+    <ul class="main__menu">
+        <li>Nature</li>
+        <li>Photography</li>
+        <li>Relaxation</li>
+        <li>Vacation</li>
+        <li>Travel</li>
+        <li>Adventure</li>
+    </ul>
+    <h2 class="content__title">Featured Posts</h2>
+    <div class="content_block-color">
+        <div class="content__block">
+            <div class="content__block_first">
+                <p class="content__block_naming">The Road Ahead</p>
+                <p class="content__block_description">The road ahead might be paved - it might not be.</p>
+                <div class=content__block_author>
+                    <div class="avatar-name-Mat">
+                        <img src="Photos/Mat_face.png", alt="Northern lights">
+                        <p class="content__block_description">Mat Vogels</p>
+                    </div>
+                    <div class="date-Mat">
+                        <p class="content__block_description">September 25, 2015</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 
 <footer>
-    <div class="footer_color">
-        <div class="footer_content">
-            <a class="logo bottom_header">Escape.</a>
-            <ul class="list bottom_li">
+    <div class="footer-color">
+        <div class="footer__content">
+            <img src="Photos/Escape.svg" alt="Escape">
+            <ul class="logo__list bottom__li">
                 <li>HOME</li>
                 <li>CATEGORIES</li>
                 <li>ABOUT</li>
