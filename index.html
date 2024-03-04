@@ -14,8 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-<header>
+<body class="content">
+<header class="nav__content head">
     <img src="Photos/Escape.svg" alt="Escape">
     <nav class="header__nav">
         <ul class="logo__list">
@@ -32,41 +32,61 @@
         <h1 class="main__head__title">Let's do it together.</h1>
         <h2 class="main__head__subtitle">We travel the world in search of stories. Come along for the ride.</h2>
         <div class="main__button">
-            <p>View Latest Posts</p>
+            <a src="#">View Latest Posts</a>
         </div>
     </div>
     <ul class="main__menu">
-        <li>Nature</li>
-        <li>Photography</li>
-        <li>Relaxation</li>
-        <li>Vacation</li>
-        <li>Travel</li>
-        <li>Adventure</li>
+        <li class="menu__nature">Nature</li>
+        <li class="menu__photography">Photography</li>
+        <li class="menu__relaxation">Relaxation</li>
+        <li class="menu__vacation">Vacation</li>
+        <li class="menu__travel">Travel</li>
+        <li class="menu__adventure">Adventure</li>
     </ul>
-    <h2 class="content__title">Featured Posts</h2>
-    <div class="content_block-color">
-        <div class="content__block">
-            <div class="content__block_first">
-                <p class="content__block_naming">The Road Ahead</p>
-                <p class="content__block_description">The road ahead might be paved - it might not be.</p>
-                <div class=content__block_author>
-                    <div class="avatar-name-Mat">
-                        <img src="Photos/Mat_face.png", alt="Northern lights">
-                        <p class="content__block_description">Mat Vogels</p>
-                    </div>
-                    <div class="date-Mat">
-                        <p class="content__block_description">September 25, 2015</p>
+    <div class="content-color">
+        <div class="content__block-borders">
+            <h2 class="content__title">Featured Posts</h2>
+            <div class="rectangle"></div>
+            <div class="content__block">
+                <div class="content__block-first">
+                    <p class="content__block_naming">The Road Ahead</p>
+                    <p class="content__block_description">The road ahead might be paved - it might not be.</p>
+                    <div class=content__block_author>
+                        <div class="avatar-name-Mat">
+                            <img src="Photos/Mat_face.png", alt="Northern lights">
+                            <p class="avatar__description">Mat Vogels</p>
+                        </div>
+                        <div class="date-Mat">
+                            <p class="date__description">September 25, 2015</p>
+                        </div>
                     </div>
                 </div>
+
+                <div class="content__block-second">
+                    <p class="content__block_naming">From Top Down</p>
+                    <p class="content__block_description">Once a year, go someplace you’ve never been before.</p>
+                    <div class=content__block_author>
+                        <div class="avatar-name-Mat">
+                            <img src="Photos/William_face.png", alt="Northern lights">
+                            <p class="avatar__description">William Wong</p>
+                        </div>
+                        <div class="date-Mat">
+                            <p class="date__description">September 25, 2015</p>
+                        </div>
+                    </div>
+                    <a class="content__block-second-action">ADVENTURE</a>
+                </div>
             </div>
+            <h2 class="content__title">Most Recent</h2>
+            <div class="rectangle"></div>
         </div>
     </div>
 </main>
 
 
-<footer>
+<footer  class="footer">
     <div class="footer-color">
-        <div class="footer__content">
+        <div class="footer__nav head">
             <img src="Photos/Escape.svg" alt="Escape">
             <ul class="logo__list bottom__li">
                 <li>HOME</li>

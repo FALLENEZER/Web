@@ -1,12 +1,28 @@
-body {
+.content {
     line-height: 35px;
 }
 
-
-header {
+.head {
     display: flex;
     padding: 20px 250px 28px;
     justify-content: space-between;
+}
+
+.logo__list li {
+    list-style-type: none;
+    display: inline;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.6px;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.header__nav {
+    margin-top: -10px;
+    color: rgb(255, 255, 255)
 }
 
 .main__head {
@@ -37,7 +53,7 @@ header {
 .main__head__subtitle {
     margin-top: 20px;
     color: rgba(255, 255, 255, 0.63);
-    font-family: "Oxygen", sans-serif;
+    font-family: 'Oxygen', sans-serif;
     font-size: 17px;
     font-weight: 400;
     line-height: 20px;
@@ -47,19 +63,21 @@ header {
 
 .content__title {
     color: rgb(46, 46, 46);
-    font-family: "Oxygen", sans-serif;
+    font-family: 'Oxygen', sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 27px;
     letter-spacing: 2px;
     text-align: center;
+    padding-top: 60px;
+    padding-bottom: 16px;
 }
 
 .main__button {
     margin-top: 31px;
     padding: 12px 31px;
     color: rgb(255, 255, 255);
-    font-family: "Oxygen", sans-serif;
+    font-family: 'Oxygen', sans-serif;
     font-size: 13px;
     font-weight: 400;
     line-height: 20px;
@@ -75,32 +93,36 @@ header {
 
 .main__menu li {
     display: inline-block;
-    padding: 13px 46px 13px;
     color: rgb(118, 128, 136);
-    font-family: "Lora", serif;
+    font-family: 'Lora', serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
-    letter-spacing: 0%;
     text-align: center;
 }
 
-.logo__list li {
-    list-style-type: none;
-    display: inline;
-    font-family: "Oxygen", sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.6px;
-    text-align: left;
-    text-transform: uppercase;
-    margin-left: 40px;
+.menu__nature {
+    padding: 13px 46px 13px;
 }
 
-.header__nav {
-    margin-top: -10px;
-    color: rgb(255, 255, 255)
+.menu__photography {
+    padding: 13px 25px 13px;
+}
+
+.menu__relaxation {
+    padding: 13px 35px 13px;
+}
+
+.menu__vacation {
+    padding: 13px 41px 13px;
+}
+
+.menu__travel {
+    padding: 13px 48px 13px;
+}
+
+.menu__adventure {
+    padding: 13px 35px 13px;
 }
 
 .main__button {
@@ -109,36 +131,79 @@ header {
     background: rgb(221, 120, 63);
 }
 
-.content__block_first {
-    position: relative;
-    background-image: url("../Photos/Small_mountains.png");
-    padding-top: 157px;
-    padding-left: 20px;
+.rectangle {
+    width: 188px;
+    height: 1px;
+    background: rgb(222, 222, 222);
+    margin: 0 auto 23px;
 }
 
 .content__block {
-    margin: 16px 240px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-left: 10px;
+    margin-right: -10px;
+    margin-bottom: 7px;
+    .content__block {
+        display: inline-block;
+    }
+}
+
+.content__block-first {
+    max-width: 460px;
+    display: flex;
+    display: inline-block;
+    border-radius: 3px;
+    padding-top: 99px;
+    position: relative;
+    background-image: url("../Photos/Small_mountains.png");
+    background-size: cover;
+    margin-right: 20px;
+}
+
+.content__block-second {
+    max-width: 460px;
+    display: flex;
+    display: inline-block;
+    border-radius: 3px;
+    padding-top: 99px;
+    position: relative;
+    background-image: url("../Photos/From top down.png");
+    background-size: cover;
+}
+
+.content__block-second-action {
+    position: absolute;
+    bottom: 241px;
+    left: 20px;
+    color: rgb(255, 255, 255);
+    font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 13px;
+    border-radius: 2px;
+    background: rgb(221, 120, 63);
+    padding: 6px 9px 7px;
 }
 
 .content__block_naming {
-    padding-right: 236px;
     color: rgb(255, 255, 255);
-    font-family: "Lora", serif;
+    font-family: 'Lora', serif;
     font-size: 27px;
     font-weight: 400;
     line-height: 30px;
-    letter-spacing: 0%;
-    text-align: left;
+    padding-top: 58px;
+    padding: 58px 236px 6px 20px;
 }
 
 .content__block_description {
     color: rgba(255, 255, 255, 0.7);
-    font-family: "Oxygen", sans-serif;
+    font-family: 'Oxygen', sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 25px;
-    letter-spacing: 0%;
-    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 12px;
 }
 
 .avatar-name-Mat {
@@ -147,25 +212,72 @@ header {
 
 .date-Mat {
     display: inline;
-    margin-left: 215px;
+}
+
+.avatar__description {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 35px;
+    padding-left: 10px;
+}
+
+.date__description {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 35px;
 }
 
 .avatar-name-Mat img {
     display: inline-block;
-    margin: 17px 20px 10px 19px;
+    padding-top: 5px;
+    padding-bottom: 4px;
 }
 
 .avatar-name-Mat p {
-    margin-top: 12px;
     display: inline-block;
 }
 
 .content__block_author {
     align-items: center;
     display: flex;
+    padding: 12px 20px 15px;
+    justify-content: space-between;
 }
 
-footer {
+.content-color {
+    background: rgb(247, 247, 247);
+}
+
+.content__block-borders {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.content__block-second {
+    display: inline-block;
+}
+
+.content__title {
+    color: rgb(46, 46, 46);
+    font-family: 'Oxygen', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 16px;
+}
+
+.footer__nav {
+    padding-top: 28px;
+}
+
+.footer {
     font-family: 'Lora', serif;
     height: 89px;
     background-image: url("../Photos/Bottom_image.png");
@@ -177,20 +289,8 @@ footer {
     height: 100%;
 }
 
-.footer__content {
-    margin: 0 auto;
-    max-width: 960px;
-    display: flex;
-    padding-top: 27px;
-    justify-content: space-between;
-}
-
 .bottom__header {
     color: rgba(255, 255, 255);
-}
-
-.content__block {
-    display: inline-block;
 }
 
 .bottom__li {
