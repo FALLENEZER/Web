@@ -35,7 +35,7 @@
     bottom: 74px;
     align-items: center;
     justify-items: center;
-    background-image: url("../Photos/Let's do it together.jpg");
+    background-image: url("../Photos/Let's_do_it_together.jpg");
     background-size: cover;
 }
 
@@ -167,7 +167,7 @@
     display: inline-block;
     border-radius: 3px;
     position: relative;
-    background-image: url("../Photos/From top down.png");
+    background-image: url("../Photos/From_top_down.png");
     background-size: cover;
 }
 
@@ -235,7 +235,7 @@
     max-width: 296px;
 }
 
-.small__cards-first, .small__cards-second, .small__cards-third {
+.small__cards-item {
     background: rgb(255, 255, 255);
 }
 
@@ -271,6 +271,41 @@
     display: flex;
     padding: 7px 13px 6px;
     justify-content: space-between;
+}
+
+.cards_naming {
+    padding: 14px 150px 6px 13px;
+    color: rgb(16, 19, 21);
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.cards_description {
+    padding-left: 13px;
+    color: rgb(122, 122, 122);
+    font-family: 'Oxygen', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+}
+
+.card__avatar__description {
+    color: rgb(153, 153, 153);
+    font-family: 'Oxygen', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 35px;
+    padding-left: 10px;
+}
+
+.cards__date-description {
+    color: rgb(153, 153, 153);
+    font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 35px;
 }
 
 .content-color {
