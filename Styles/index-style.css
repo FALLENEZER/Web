@@ -166,16 +166,14 @@
     display: flex;
     display: inline-block;
     border-radius: 3px;
-    padding-top: 99px;
     position: relative;
     background-image: url("../Photos/From top down.png");
     background-size: cover;
 }
 
 .content__block-second-action {
-    position: absolute;
-    bottom: 241px;
-    left: 20px;
+    display: inline-block;
+    margin: 20px 0px 0px 20px;
     color: rgb(255, 255, 255);
     font-family: 'Oxygen', sans-serif;
     font-size: 12px;
@@ -196,6 +194,10 @@
     padding: 58px 236px 6px 20px;
 }
 
+.with-action {
+    padding-top: 111px;
+}
+
 .content__block_description {
     color: rgba(255, 255, 255, 0.7);
     font-family: 'Oxygen', sans-serif;
@@ -203,14 +205,14 @@
     font-weight: 400;
     line-height: 25px;
     padding-left: 20px;
-    padding-bottom: 12px;
+    padding-bottom: 15px;
 }
 
 .avatar-name-Mat {
    display: flex;
 }
 
-.date-Mat {
+.date {
     display: inline;
 }
 
@@ -223,6 +225,20 @@
     padding-left: 10px;
 }
 
+.small__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 16px 240px 0px 240px;
+    padding-bottom: 89px;
+    margin-left: 252px;
+    gap: 24px;
+    max-width: 296px;
+}
+
+.small__cards-first, .small__cards-second, .small__cards-third {
+    background: rgb(255, 255, 255);
+}
+
 .date__description {
     color: rgba(255, 255, 255, 0.7);
     font-family: 'Oxygen', sans-serif;
@@ -231,20 +247,29 @@
     line-height: 35px;
 }
 
-.avatar-name-Mat img {
+.avatar-name {
+    display: flex;
+}
+
+.avatar-name img {
     display: inline-block;
     padding-top: 5px;
     padding-bottom: 4px;
 }
 
-.avatar-name-Mat p {
+.avatar-name p {
     display: inline-block;
 }
 
 .content__block_author {
-    align-items: center;
     display: flex;
     padding: 12px 20px 15px;
+    justify-content: space-between;
+}
+
+.cards__block_author {
+    display: flex;
+    padding: 7px 13px 6px;
     justify-content: space-between;
 }
 
@@ -277,9 +302,15 @@
     padding-top: 28px;
 }
 
+.small__cards-borders {
+    border-bottom: solid;
+    border-color: rgb(247, 247, 247);
+    height: 93px;
+}
+
 .footer {
     font-family: 'Lora', serif;
-    height: 89px;
+    max-height: 91px;
     background-image: url("../Photos/Bottom_image.png");
 }
 
