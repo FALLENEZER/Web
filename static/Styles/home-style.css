@@ -176,7 +176,7 @@
 
 .content__block-second-action {
     display: inline-block;
-    margin: 20px 0px 0px 20px;
+    margin: 20px 0px 53px 20px;
     color: rgb(255, 255, 255);
     font-family: 'Oxygen', sans-serif;
     font-size: 12px;
@@ -195,10 +195,6 @@
     line-height: 30px;
     padding-top: 58px;
     padding: 58px 236px 6px 20px;
-}
-
-.with-action {
-    padding-top: 111px;
 }
 
 .content__block_description {
