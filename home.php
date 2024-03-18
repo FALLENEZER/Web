@@ -1,5 +1,5 @@
 <?php
-$feautured_posts = [
+$feauturedPosts = [
  [
    'title' => 'The Road Ahead',
    'subtitle' => 'The road ahead might be paved - it might not be.',
@@ -19,7 +19,7 @@ $feautured_posts = [
     'id' => 'second'
  ]
 ];
-$recent_posts = [
+$recentPosts = [
     [
       'title' => 'Still Standing Tall',
       'subtitle' => 'Life begins at the end of your comfort zone.',
@@ -122,7 +122,7 @@ $recent_posts = [
             
             <div class="content__block">
             <?php 
-                foreach ($feautured_posts as $post) {
+                foreach ($feauturedPosts as $post) {
                     include 'post_feautured_preview.php';
                 }
             ?>
@@ -132,7 +132,7 @@ $recent_posts = [
         </div>
         <div class="small__cards">
             <?php 
-                foreach ($recent_posts as $post) {
+                foreach ($recentPosts as $post) {
                     include 'post_recent_preview.php';
                 }
             ?>

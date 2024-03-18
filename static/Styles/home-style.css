@@ -223,11 +223,10 @@
 .small__cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 16px 240px 0px 240px;
+    margin: 0 auto;
     padding-bottom: 89px;
-    margin-left: 252px;
     gap: 24px;
-    max-width: 296px;
+    max-width: 960px
 }
 
 .small_cards__card {
