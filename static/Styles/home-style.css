@@ -197,6 +197,11 @@
     padding: 58px 236px 6px 20px;
 }
 
+.link_naming {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
 .content__block_description {
     color: rgba(255, 255, 255, 0.7);
     font-family: 'Oxygen', sans-serif;

@@ -1,6 +1,6 @@
 <div class="content__block-<?= $post['order'] ?>">
     <a class="content__block-<?= $post['order'] ?>-action"><?= $post['action'] ?></a>
-    <p class="content__block_naming"><a href='/post?id=<?= $post['id'] ?>'><?= $post['title'] ?></a></p>
+    <p class="content__block_naming"><a class='link_naming' href='/post?id=<?= $post['id'] ?>'><?= $post['title'] ?></a></p>
     <p class="content__block_description"><?= $post['subtitle'] ?></p>
     <div class=content__block_author>
         <div class="avatar-name">
