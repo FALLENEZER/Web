@@ -7,7 +7,8 @@ $feauturedPosts = [
    'date' => 'September 25, 2015',
    'action' => '',
    'avatar' => 'Mat',
-   'id' => 'first'
+   'order' => 'first',
+   'id' => 1
  ],
  [
     'title' => 'From Top Down',
@@ -16,7 +17,8 @@ $feauturedPosts = [
     'date' => 'September 25, 2015',
     'action' => 'ADVENTURE',
     'avatar' => 'William',
-    'id' => 'second'
+    'order' => 'second',
+    'id' => 2
  ]
 ];
 $recentPosts = [
