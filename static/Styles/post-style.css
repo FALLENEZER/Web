@@ -27,6 +27,7 @@ header {
     text-align: left;
     text-transform: uppercase;
     margin-left: 40px;
+    text-transform: uppercase;
 }
 
 nav {
@@ -104,7 +105,7 @@ footer {
     color: rgba(255, 255, 255);
 }
 
-.bottom_li {
+.bottom_li li {
     color: rgba(255, 255, 255, 0.6);
 }
 

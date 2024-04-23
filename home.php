@@ -1,78 +1,62 @@
 <?php
-$feauturedPosts = [
- [
-   'title' => 'The Road Ahead',
-   'subtitle' => 'The road ahead might be paved - it might not be.',
-   'author' => 'Mat Vogels',
-   'date' => 'September 25, 2015',
-   'action' => '',
-   'avatar' => 'Mat',
-   'order' => 'first',
-   'id' => 1
- ],
- [
-    'title' => 'From Top Down',
-    'subtitle' => 'Once a year, go someplace you’ve never been before.',
-    'author' => 'William Wong',
-    'date' => 'September 25, 2015',
-    'action' => 'ADVENTURE',
-    'avatar' => 'William',
-    'order' => 'second',
-    'id' => 2
- ]
-];
-$recentPosts = [
-    [
-      'title' => 'Still Standing Tall',
-      'subtitle' => 'Life begins at the end of your comfort zone.',
-      'img_modifier' => 'Still_standing_tall',
-      'author' => 'William Wong',
-      'date' => '9/25/2015',
-      'avatar' => 'William'
-    ],
-    [
-       'title' => 'Sunny Side Up',
-       'subtitle' => 'No place is ever as bad as they tell you it’s going to be.',
-       'img_modifier' => 'Sunny_side_up',
-       'author' => 'Mat Vogels',
-       'date' => '9/25/2015',
-       'avatar' => 'Mat'
-    ],
-    [
-       'title' => 'Water Falls',
-       'subtitle' => 'We travel not to escape life, but for life not to escape us.',
-       'img_modifier' => 'Water_falls',
-       'author' => 'Mat Vogels',
-       'date' => '9/25/2015',
-       'avatar' => 'Mat'
-    ],
-    [
-       'title' => 'Through the Mist',
-       'subtitle' => 'Travel makes you see what a tiny place you occupy in the world.',
-       'img_modifier' => 'Through_the_mist',
-       'author' => 'William Wong',
-       'date' => '9/25/2015',
-       'avatar' => 'William'
-    ],
-    [
-       'title' => 'Awaken Early',
-       'subtitle' => 'Not all those who wander are lost.',
-       'img_modifier' => 'Awaken_early',
-       'author' => 'Mat Vogels',
-       'date' => '9/25/2015',
-       'avatar' => 'Mat'
-    ],
-    [
-       'title' => 'Try it Always',
-       'subtitle' => 'The world is a book, and those who do not travel read only one page.',
-       'img_modifier' => 'Try_it_always',
-       'author' => 'Mat Vogels',
-       'date' => '9/25/2015',
-       'avatar' => 'Mat'
-    ]
-   ];
+	$date_sec = "1443139200"; // Исходные секунды
+	$date_number = date("m/d/Y", strtotime($date_sec));
+    $date_words = date("F j, Y", $date_sec);
 ?>
 
+<?php
+const HOST = 'localhost';
+const USERNAME = 'root';
+const PASSWORD = 'gldpossancti3937';
+const DATABASE = 'blog';
+
+function createDBConnection(): mysqli {
+  $conn = new mysqli(HOST, USERNAME, PASSWORD, DATABASE);
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+
+  echo "Connected successfully<br>";
+  return $conn;
+}
+
+function closeDBConnection(mysqli $conn): void {
+  $conn->close();
+}
+
+function getAndPrintPostsFromDB(mysqli $conn): array {
+  $sql = "SELECT * FROM post";
+  $result = $conn->query($sql);
+  $posts = [];
+  if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      echo "ID: {$row['id']} - Title: {$row['title']} - Subtitle: {$row['subtitle']} - Date: {$row['publish_date']} - Is Featured: {$row['featured']} <br>";
+    $posts[] = $row;
+	}
+  } else {
+    echo "0 results";
+  }
+  return $posts;
+}
+
+function getAllIdFromDB(mysqli $conn): array {
+  $sql = "SELECT id FROM post";
+  $result = $conn->query($sql);
+  $id = [];
+  if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      $id[] = $row['id'];
+    }
+  } else {
+    echo "0 results";
+  }
+  return $id;
+}
+
+$conn = createDBConnection();
+$posts = getAndPrintPostsFromDB($conn);
+closeDBConnection($conn);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -80,8 +64,8 @@ $recentPosts = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Страница блога</title>
-    <link rel="stylesheet" href="static/Styles/home-style.css">
+    <title>Blog</title>
+    <link rel="stylesheet" href="http://localhost:8001/static/Styles/home-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
@@ -90,13 +74,13 @@ $recentPosts = [
 
 <body class="content">
 <header class="nav__content head">
-    <img src="static/Photos/Escape.svg" alt="Escape">
+    <img src="http://localhost:8001/static/Photos/Escape.svg" alt="Escape">
     <nav class="header__nav">
         <ul class="logo__list">
-            <li>HOME</li>
-            <li>CATEGORIES</li>
-            <li>ABOUT</li>
-            <li>CONTACT</li>
+            <li>home</li>
+            <li>categories</li>
+            <li>about</li>
+            <li>contact</li>
         </ul>
     </nav>
 </header>
@@ -124,7 +108,7 @@ $recentPosts = [
             
             <div class="content__block">
             <?php 
-                foreach ($feauturedPosts as $post) {
+                foreach ($posts as $post) {
                     include 'post_feautured_preview.php';
                 }
             ?>
@@ -134,7 +118,7 @@ $recentPosts = [
         </div>
         <div class="small__cards">
             <?php 
-                foreach ($recentPosts as $post) {
+                foreach ($posts as $post) {
                     include 'post_recent_preview.php';
                 }
             ?>
@@ -142,16 +126,15 @@ $recentPosts = [
     </div>
 </main>
 
-
 <footer  class="footer">
     <div class="footer-color">
         <div class="footer__nav head">
-            <img src="static/Photos/Escape.svg" alt="Escape">
+            <img src="http://localhost:8001/static/Photos/Escape.svg" alt="Escape">
             <ul class="logo__list bottom__li">
-                <li>HOME</li>
-                <li>CATEGORIES</li>
-                <li>ABOUT</li>
-                <li>CONTACT</li>
+                <li>home</li>
+                <li>categories</li>
+                <li>about</li>
+                <li>contact</li>
             </ul>
         </div>
     </div>
