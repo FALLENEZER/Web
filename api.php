@@ -27,4 +27,8 @@
       $dataAsArray = json_decode($dataAsJson, true);
       saveImage($dataAsArray['image']);
   }
+
+  function addPost {
+    
+  }
 ?>

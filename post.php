@@ -1,10 +1,14 @@
 <?php 
-	include('home.php');
+	include('connection.php');
 	$postId = $_GET['id'];
-	if (($postId < 0) && ($postId > 1000000)) {
+	if (is_int($postId)) {
 		var_dump("Invalid id");
 	}
-	$data = getAllIdFromDB(createDBConnection());
+	$post = getAllIdFromDB(createDBConnection(), $postId);
+
+	if(!$post) {
+		header('Location: /404.php');
+	}
 	#closeDBConnection(createDBConnection());
 ?>
 
@@ -23,21 +27,24 @@
 </head>
 <body>
 <header>
-	<a class="logo">Escape.</a>
+	<img src="http://localhost:8001/static/Photos/logo_b.svg" alt="Escape">
 	<nav>
 	<ul class="list">
-		<?= $post[$postId]['links'] ?>
+		<li>home</li>
+        <li>categories</li>
+        <li>about</li>
+        <li>contact</li>
 	</ul>
 	</nav>
 </header>
 <main>
 	<div class="headers">
-	<h1><?= $post['title'], $post['id'] ?></h1>
-	<h2><?= $post[$postId]['subtitle'] ?></h2>
+	<h1><?= $post['title'] ?></h1>
+	<h2><?= $post['subtitle'] ?></h2>
 	</div>
-	<img class="img_main" src="http://localhost:8001/static/Photos/Mountains_main_back.jpeg" alt="Mountains">
+	<img class="img_main" src="<?= $post['image_url'] ?>" alt="Mountains">
 	<div class="main_text">
-		<?= $post[$postId]['text'] ?>
+		<?= $post['content'] ?>
 	</div>
 </main>
 
@@ -46,7 +53,10 @@
                 <div class="footer_content">
                     <a class="logo bottom_header">Escape.</a>
                     <ul class="list bottom_li">
-						<?= $post[$postId]['links'] ?>
+						<li>home</li>
+            			<li>categories</li>
+            			<li>about</li>
+            			<li>contact</li>	
                     </ul>
                 </div>
             </div>

@@ -1,61 +1,5 @@
 <?php
-	$date_sec = "1443139200"; // Исходные секунды
-	$date_number = date("m/d/Y", strtotime($date_sec));
-    $date_words = date("F j, Y", $date_sec);
-?>
-
-<?php
-const HOST = 'localhost';
-const USERNAME = 'root';
-const PASSWORD = 'gldpossancti3937';
-const DATABASE = 'blog';
-
-function createDBConnection(): mysqli {
-  $conn = new mysqli(HOST, USERNAME, PASSWORD, DATABASE);
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-
-  echo "Connected successfully<br>";
-  return $conn;
-}
-
-function closeDBConnection(mysqli $conn): void {
-  $conn->close();
-}
-
-function getAndPrintPostsFromDB(mysqli $conn): array {
-  $sql = "SELECT * FROM post";
-  $result = $conn->query($sql);
-  $posts = [];
-  if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-      echo "ID: {$row['id']} - Title: {$row['title']} - Subtitle: {$row['subtitle']} - Date: {$row['publish_date']} - Is Featured: {$row['featured']} <br>";
-    $posts[] = $row;
-	}
-  } else {
-    echo "0 results";
-  }
-  return $posts;
-}
-
-function getAllIdFromDB(mysqli $conn): array {
-  $sql = "SELECT id FROM post";
-  $result = $conn->query($sql);
-  $id = [];
-  if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-      $id[] = $row['id'];
-    }
-  } else {
-    echo "0 results";
-  }
-  return $id;
-}
-
-$conn = createDBConnection();
-$posts = getAndPrintPostsFromDB($conn);
-closeDBConnection($conn);
+  include('connection.php')
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +53,10 @@ closeDBConnection($conn);
             <div class="content__block">
             <?php 
                 foreach ($posts as $post) {
-                    include 'post_feautured_preview.php';
+                  if ($post['id'] > 2) {
+                    break;
+                  }
+                  include 'post_feautured_preview.php';
                 }
             ?>
             </div>
@@ -119,7 +66,10 @@ closeDBConnection($conn);
         <div class="small__cards">
             <?php 
                 foreach ($posts as $post) {
-                    include 'post_recent_preview.php';
+                  if ($post['id'] < 3) {
+                    continue;
+                  }
+                  include 'post_recent_preview.php';
                 }
             ?>
         </div>
